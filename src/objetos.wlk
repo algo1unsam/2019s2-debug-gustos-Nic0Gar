@@ -3,6 +3,7 @@ object rojo { method esFuerte() { return true } }
 object verde { method esFuerte() { return true } }
 object celeste { method esFuerte() { return false } } 
 object pardo { method esFuerte() { return false } }
+object naranja { method esFuerte() { return true}}
 
 /* materiales */
 object cobre { method brilla() { return true } }
@@ -22,6 +23,12 @@ object pelota {
 	method color() { return pardo }
 	method material() { return cuero }
 	method peso() { return 1300 }
+}
+
+object arito {
+	method color() { return celeste }
+	method peso() { return 180 }
+	method material() { return cobre }
 }
 
 object biblioteca {
@@ -50,7 +57,35 @@ object placa {
 	method setPeso(peso) { _peso = peso }
 }
 
+object banquito {
+	var _color 
+	
+	method color() { return naranja }
+	method setColor(color) { _color = color }
+	method material() { return madera }
+	method peso() { return 1700 }
+}
 
+object cajita {
+	var objInterior = pelota
+	var material = cobre
+	
+	method setObjetoInterior (obj){
+		objInterior = obj
+	}
+	method color() { return rojo }
+	
+	method material() { return material}
+	
+	method objetoInterior(){ return objInterior}
+	
+	method setMaterial(_mat){
+		material = _mat
+	}
+	method peso(){
+		return 400 + objInterior.peso()
+	}
+}
 
 
 
