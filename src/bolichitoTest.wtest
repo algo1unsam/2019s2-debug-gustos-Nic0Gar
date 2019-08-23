@@ -124,3 +124,38 @@ test " pero si se le cambia el color del banquito por verde, entonces deja de te
 	assert.that( bolichito.tieneAlgoDeColor(naranja) )
 }
 
+test "Un bolichito con un muñeco de 500 gramos en mostrador y una cajita de plomo con un arito dentro es brillante pero no tiene luz" {
+	cajita.setMaterial(plomo)
+	cajita.setObjetoInterior(arito)
+	munieco.setPeso(500)
+	
+	bolichito.ponerEnVidriera(cajita)
+	bolichito.ponerEnMostrador(munieco)
+	assert.that(bolichito.esBrillante())
+	assert.notThat(bolichito.tieneLuz())
+	
+}
+
+test "La misma situación pero con una cajita de plomo cromado, entonces el bolichito es brillante y tiene luz." {
+	cajita.setMaterial(plomo)
+	plomo.setEstado(cromado)
+	cajita.setObjetoInterior(arito)
+	
+	bolichito.ponerEnVidriera(cajita)
+	bolichito.ponerEnMostrador(munieco)
+	assert.that(bolichito.esBrillante())
+	assert.that(bolichito.tieneLuz())
+	
+}
+
+test "La misma situación pero con una cajita de plomo oxidado, entonces el bolichito no es brillante ni tiene luz." {
+	cajita.setMaterial(plomo)
+	plomo.setEstado(oxidado)
+	cajita.setObjetoInterior(arito)
+	
+	bolichito.ponerEnVidriera(cajita)
+	bolichito.ponerEnMostrador(munieco)
+	assert.notThat(bolichito.esBrillante())
+	assert.notThat(bolichito.tieneLuz())
+	
+}
