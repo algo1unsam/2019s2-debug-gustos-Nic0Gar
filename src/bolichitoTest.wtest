@@ -159,3 +159,8 @@ test "La misma situación pero con una cajita de plomo oxidado, entonces el boli
 	assert.notThat(bolichito.tieneLuz())
 	
 }
+
+/* falto test para probar pre/post cálculo explicado en clase
+ "Hacer un test que pruebe una cajita de cobre con un muñeco que pesa 100,
+   entonces las caja pesa 500, si cambio el peso del muñeco a 400 entonces el peso total de la caja debería ser 800"
+*/
